@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>SVG Assignment</title>
+  <title>When It Actually Hasn't Finished Loading...</title>
   <link type="text/css" rel="stylesheet" href="svg.css">
   <style type="text/css">
     .st0{fill:#FDFDFD;}
@@ -31,28 +31,45 @@
 
   #button
   {
-    fill:white;
+  	opacity: 0.6;
+    fill:url(#gradient1);
+    
   }
 
   #button:hover
   {
-    fill:black;
+    fill: grey;
   }
 
   #button:active
   {
-    fill:red;
+    fill:blue;
   }
 
   #center
   {
-    fill:#FFFA94;
+    fill:white;
   }
 
-  #screen
-  {
-    fill: url(#gradient1);
+  #screen{
+  	fill: black;
+  	animation:colors 3s;
+  	-webkit-animation: colors 3s;
+  	animation-iteration-count: infinite;
+  	-webkit-animation-iteration-count: infinite;
+  	animation-direction: alternate; 
+  	-webkit-animation-direction: alternate; 
   }
+  
+  @keyframes colors {
+  	from {fill: grey;}
+  	to {fill: #33D6FF}
+  }
+  @-webkit-keyframes colors {
+  	from {fill: grey;}
+  	to {fill: #33D6FF}
+  }
+  	
 
 
 
@@ -63,7 +80,7 @@
 
 <div id="container">
 
-<h1>Ezequiel Forks Taylor's SVG Assignment</h1>
+<h1>Awk Moment When It Actually Hasn't Finished Loading...</h1>
 <a href="index.html">Home</a> | <a href="svg.html">SVG Assignment</a>
 <br>
 <br>
@@ -73,12 +90,9 @@
 <svg width="700px" height="500px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 612 792" style="enable-background:new 0 0 612 792;" xml:space="preserve">
 
-
-   <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="110%">
-     <stop offset="0%" stop-color="maroon" stop-opacity="0.8" />
-
-     <stop offset="100%" stop-color="black" stop-opacity="0.8" />
-
+   <linearGradient id="gradient1" gradientUnits="userSpaceOnUse" x1="708" y1="708.3" x2="708.6" y2="708.3">
+     <stop offset="0" style="stop-color: #33D6FF"/>
+	 <stop offset="0" style="stop-color: #000000"/>
    </linearGradient>
 
 <g id="book">
@@ -1417,6 +1431,15 @@
 
 <g id="home">
   <circle id="button" class="st16" cx="305" cy="708.3" r="25"/>
+  	<animateTransform
+  	attributeName="transform"
+  	begin="0s"
+  	dur="3s"
+  	type="rotate"
+  	from="0 305 708.3"
+  	to="360 305 708.3"
+  	repeatCount="indefinite" />
+  </circle>
   <circle id="center" class="st16" cx="305" cy="708.3" r="10.5"/>
 </g>
 </a>
